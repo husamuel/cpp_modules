@@ -1,14 +1,3 @@
-<p align="center">
-  <img src="https://github.com/jotavare/jotavare/blob/main/42/banners/piscine_and_common_core/github_piscine_and_common_core_banner_cpp.png">
-</p>
-
-<p align="center">
-	<img src="https://img.shields.io/badge/status-finished-success?color=%2312bab9&style=flat-square"/>
-	<img src="https://img.shields.io/github/languages/top/jotavare/cpp_modules?color=%2312bab9&style=flat-square" />
-	<img src="https://img.shields.io/github/last-commit/jotavare/cpp_modules?color=%2312bab9&style=flat-square" />
-	<a href='https://www.linkedin.com/in/jotavare' target="_blank"><img alt='Linkedin' src='https://img.shields.io/badge/LinkedIn-blue?style=flat-square'/></a>
-	<a href='https://profile.intra.42.fr/users/jotavare' target="_blank"><img alt='42' src='https://img.shields.io/badge/Porto-100000?style=flat-square&logo=42&logoColor=white&labelColor=000000&color=000000'/></a>
-</p>
 
 <p align="center">
 	<a href="#about">About</a> •
@@ -21,16 +10,16 @@
 ## ABOUT
 | Modules | Description |
 | :-- | :-- |
-| **[CPP 00](https://github.com/jotavare/cpp_modules/tree/main/cpp_modules)** | Understand the specificities of the language when compared to C. |
-| **[CPP 01](https://github.com/jotavare/cpp_modules/tree/main/cpp_modules)** | Memory allocation, reference, pointers to members and the usage of the switch. |
-| **[CPP 02](https://github.com/jotavare/cpp_modules/tree/main/cpp_modules)** | Ad-hoc polymorphism, overloads and orthodox canonical classes. |
-| **[CPP 03](https://github.com/jotavare/cpp_modules/tree/main/cpp_modules)** | Inheritance. |
-| **[CPP 04](https://github.com/jotavare/cpp_modules/tree/main/cpp_modules)** | Subtype polymorphism, abstract classes and interfaces. |
-| **[CPP 05](https://github.com/jotavare/cpp_modules/tree/main/cpp_modules)** | Try/Catch and Exceptions. |
-| **[CPP 06](https://github.com/jotavare/cpp_modules/tree/main/cpp_modules)** | Different casts. |
-| **[CPP 07](https://github.com/jotavare/cpp_modules/tree/main/cpp_modules)** | Templates. |
-| **[CPP 08](https://github.com/jotavare/cpp_modules/tree/main/cpp_modules)** | Templated containers, iterators and algorithms. |
-| **[CPP 09](https://github.com/jotavare/cpp_modules/tree/main/cpp_modules)** | Containers. |
+| **[CPP 00](https://github.com/husamuel/cpp_modules/tree/main/C-Module-00)** | Understand the specificities of the language when compared to C. |
+| **[CPP 01](https://github.com/husamuel/cpp_modules/tree/main/C-Module-01)** | Memory allocation, reference, pointers to members and the usage of the switch. |
+| **[CPP 02](https://github.com/husamuel/cpp_modules/tree/main/C-Module-02)** | Ad-hoc polymorphism, overloads and orthodox canonical classes. |
+| **[CPP 03](https://github.com/husamuel/cpp_modules/tree/main/C-Module-03)** | Inheritance. |
+| **[CPP 04](https://github.com/husamuel/cpp_modules/tree/main/C-Module-04)** | Subtype polymorphism, abstract classes and interfaces. |
+| **CPP 05** | Try/Catch and Exceptions. |
+| **CPP 06** | Different casts. |
+| **CPP 07** | Templates. |
+| **CPP 08** | Templated containers, iterators and algorithms. |
+| **CPP 09** | Containers. |
 
 ## RULES
 ```
