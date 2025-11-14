@@ -1,20 +1,24 @@
-CC = g++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp ./../ex00/Animal.cpp ./../ex00/Dog.cpp ./../ex00/Cat.cpp ./../ex00/WrongAnimal.cpp ./../ex00/WrongCat.cpp Brain.cpp
-OBJS = $(SRCS:.cpp=.o)
-TARGET = brainAnimal
+NAME = Brain
 
-all: $(TARGET)
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp \
+      WrongAnimal.cpp WrongCat.cpp Brain.cpp
+OBJ = $(SRC:.cpp=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(TARGET)
-re: clean all
+	rm -f $(NAME)
+
+re: fclean all

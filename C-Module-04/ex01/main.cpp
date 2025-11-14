@@ -1,37 +1,49 @@
-#include "./ex00/Animal.hpp"
-#include "./ex00/Dog.hpp"
-#include "./ex00/Cat.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 #include "Brain.hpp"
+#include <iostream>
+#include <sstream>
 
-#define N_ANIMALS 10
-
-#define N_ANIMALS 10
-
-int main(void)
+int main()
 {
-    // Create array of Animal pointers
-    Animal* animals[N_ANIMALS];
+    Dog* dog = new Dog();
+    Cat* cat = new Cat();
 
-    // Fill first half with Dogs
-    for (int i = 0; i < N_ANIMALS / 2; i++)
-        animals[i] = new Dog();
+    dog->getBrain()->setIdea(0, "Chase cat");
+    cat->getBrain()->setIdea(0, "Sleep");
 
-    // Fill second half with Cats
-    for (int i = N_ANIMALS / 2; i < N_ANIMALS; i++)
-        animals[i] = new Cat();
+    std::cout << "Dog idea[0]: " << dog->getBrain()->getIdea(0) << std::endl;
+    std::cout << "Cat idea[0]: " << cat->getBrain()->getIdea(0) << std::endl;
 
-    // Test deep copy in separate scope
-    {
-        std::cout << "\n=== Testing Deep Copy ===" << std::endl;
-        Dog original;
-        Dog copy = original;  // Should create a deep copy
-        // Both objects go out of scope here - should see two separate destructor calls
-    }
+    delete dog;
+    delete cat;
 
-    // Clean up all animals
-    std::cout << "\n=== Cleaning Up Animals ===" << std::endl;
-    for (int i = 0; i < N_ANIMALS; i++)
-        delete animals[i];
+    Animal* animals[2];
+    animals[0] = new Dog();
+    animals[1] = new Cat();
+
+    delete animals[0]; 
+    delete animals[1]; 
+
+    Dog originalDog;
+    originalDog.getBrain()->setIdea(0, "Original Dog Idea");
+
+    Dog copiedDog = originalDog; 
+    copiedDog.getBrain()->setIdea(0, "Copied Dog Idea");
+
+    std::cout << "Original Dog idea[0]: " << originalDog.getBrain()->getIdea(0) << std::endl;
+    std::cout << "Copied Dog idea[0]: " << copiedDog.getBrain()->getIdea(0) << std::endl;
+
+    Cat originalCat;
+    originalCat.getBrain()->setIdea(0, "Original Cat Idea");
+
+    Cat copiedCat;
+    copiedCat = originalCat;
+    copiedCat.getBrain()->setIdea(0, "Copied Cat Idea");
+
+    std::cout << "Original Cat idea[0]: " << originalCat.getBrain()->getIdea(0) << std::endl;
+    std::cout << "Copied Cat idea[0]: " << copiedCat.getBrain()->getIdea(0) << std::endl;
 
     return 0;
 }
