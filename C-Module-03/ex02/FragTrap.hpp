@@ -1,11 +1,13 @@
 #ifndef FLAGTRAP_HPP
 #define FLAGTRAP_HPP
 
-#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
-class FragTrap : public ScavTrap {
+class FragTrap : public ClapTrap {
     public:
         FragTrap(const std::string& name);
+        FragTrap(const FragTrap& other);
+        FragTrap& operator=(const FragTrap& other);
         ~FragTrap();
 
         void highFivesGuys(void);

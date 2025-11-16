@@ -2,11 +2,31 @@
 
 int main()
 {
-    FragTrap a("Warrior");
-    a.attack("Enemy");
-    a.guardGate();
+    std::cout << "Constructor with name" << std::endl;
+    FragTrap a("Bomber");
+    a.attack("Intruder");
+    a.takeDamage(40);
+    a.beRepaired(20);
     a.highFivesGuys();
-    a.takeDamage(5);
-    a.beRepaired(3);
+
+    std::cout << "-----------------------------" << std::endl;
+
+    std::cout << "Copy constructor" << std::endl;
+    FragTrap b = a;
+    b.attack("CloneIntruder");
+    b.takeDamage(10);
+    b.beRepaired(5);
+    b.highFivesGuys();
+
+    std::cout << "-----------------------------" << std::endl;
+
+    std::cout << "Assignment operator" << std::endl;
+    FragTrap c("Temporary");
+    c = a;
+    c.attack("AssignedIntruder");
+    c.takeDamage(25);
+    c.beRepaired(10);
+    c.highFivesGuys();
+
     return 0;
 }
