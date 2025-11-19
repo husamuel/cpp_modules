@@ -3,7 +3,7 @@
 
 int main()
 {
-    std::cout << "Constructor with name" << std::endl;
+    std::cout << "Constructor" << std::endl;
     ClapTrap a("Warrior");
     a.attack("Enemy");
     a.takeDamage(5);
