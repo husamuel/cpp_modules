@@ -1,7 +1,7 @@
 NAME = Animal
 
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+C = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp \
       WrongAnimal.cpp WrongCat.cpp
@@ -10,10 +10,10 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+	$(C) $(FLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(C) $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)

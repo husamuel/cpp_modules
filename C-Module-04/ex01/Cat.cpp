@@ -1,35 +1,35 @@
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
-    brain = new Brain();
     type = "Cat";
+    brain = new Brain();
     std::cout << "Cat have been constructed" << std::endl;
 }
 
-Cat::~Cat()
-{
-    delete brain;
-    std::cout << "Cat have been destroyed" << std::endl;
-}
-
-Cat::Cat(const Cat& other)
+Cat::Cat(const Cat& other) : Animal()
 {
     type = other.type;
     brain = new Brain(*other.brain);
-    std::cout << "Cat copy constructor called" << std::endl;
+    std::cout << "Copy constructor called for " << other.type << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& other)
 {
     if (this != &other)
     {
-        type = other.type;
-        delete brain;     
+        Animal::operator=(other);
+        delete brain;
         brain = new Brain(*other.brain);
+        this->type = other.type;
     }
-    std::cout << "Cat copy assignment called" << std::endl;
     return *this;
+}
+
+
+Cat::~Cat()
+{
+    std::cout << type << " was destroyed" << std::endl;
 }
 
 void Cat::makeSound() const
@@ -37,7 +37,12 @@ void Cat::makeSound() const
     std::cout << "MEOW" << std::endl;
 }
 
-Brain* Cat::getBrain() const
-{
-    return brain;
+void Cat::set_idea(const std::string& str, int i) {
+    if (brain)
+        brain->set_idea(str, i);
+}
+std::string Cat::get_idea(int i) const {
+    if (brain)
+        return brain->get_idea(i);
+    return "";
 }

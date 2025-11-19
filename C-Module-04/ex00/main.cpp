@@ -8,6 +8,7 @@
 int main()
 {
     std::cout << "=== Correct hierarchy ===" << std::endl;
+
     const Animal* meta = new Animal();
     const Animal* dog = new Dog();
     const Animal* cat = new Cat();
@@ -26,13 +27,14 @@ int main()
     delete cat;
 
     std::cout << "\n=== Wrong hierarchy ===" << std::endl;
+
     const WrongAnimal* wrongMeta = new WrongAnimal();
     const WrongAnimal* wrongCat = new WrongCat();
 
     std::cout << wrongCat->getType() << " says: ";
-    wrongCat->makeSound();
+    wrongCat->makeSound(); 
 
-    std::cout << "WrongAnimal says: ";
+    std::cout << "Wrong Animal says: ";
     wrongMeta->makeSound();
 
     delete wrongMeta;

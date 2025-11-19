@@ -1,49 +1,42 @@
-#include "Animal.hpp"
-#include "Cat.hpp"
 #include "Dog.hpp"
-#include "Brain.hpp"
+#include "Cat.hpp"
 #include <iostream>
 #include <sstream>
 
 int main()
 {
-    Dog* dog = new Dog();
-    Cat* cat = new Cat();
+    std::stringstream ss;
+    Dog* dog1 = new Dog();
+    Cat* cat1 = new Cat();
 
-    dog->getBrain()->setIdea(0, "Chase cat");
-    cat->getBrain()->setIdea(0, "Sleep");
+    for (int i = 0; i < 5; i++)
+    {
+        ss.str("");
+        ss << i;
+        dog1->set_idea("Bone " + ss.str(), i);
+        cat1->set_idea("Fish " + ss.str(), i);
+    }
 
-    std::cout << "Dog idea[0]: " << dog->getBrain()->getIdea(0) << std::endl;
-    std::cout << "Cat idea[0]: " << cat->getBrain()->getIdea(0) << std::endl;
+    for (int i = 0; i < 5; i++)
+    {
+        std::cout << dog1->get_idea(i) << std::endl;
+        std::cout << cat1->get_idea(i) << std::endl;
+    }
 
-    delete dog;
-    delete cat;
+    Dog* dog2 = new Dog(*dog1);
+    dog2->set_idea("Meat", 0);
+    std::cout << "dog1 idea[0]: " << dog1->get_idea(0) << std::endl;
+    std::cout << "dog2 idea[0]: " << dog2->get_idea(0) << std::endl;
 
-    Animal* animals[2];
-    animals[0] = new Dog();
-    animals[1] = new Cat();
+    Cat cat2;
+    cat2 = *cat1;
+    cat2.set_idea("Mouse", 0);
+    std::cout << "cat1 idea[0]: " << cat1->get_idea(0) << std::endl;
+    std::cout << "cat2 idea[0]: " << cat2.get_idea(0) << std::endl;
 
-    delete animals[0]; 
-    delete animals[1]; 
-
-    Dog originalDog;
-    originalDog.getBrain()->setIdea(0, "Original Dog Idea");
-
-    Dog copiedDog = originalDog; 
-    copiedDog.getBrain()->setIdea(0, "Copied Dog Idea");
-
-    std::cout << "Original Dog idea[0]: " << originalDog.getBrain()->getIdea(0) << std::endl;
-    std::cout << "Copied Dog idea[0]: " << copiedDog.getBrain()->getIdea(0) << std::endl;
-
-    Cat originalCat;
-    originalCat.getBrain()->setIdea(0, "Original Cat Idea");
-
-    Cat copiedCat;
-    copiedCat = originalCat;
-    copiedCat.getBrain()->setIdea(0, "Copied Cat Idea");
-
-    std::cout << "Original Cat idea[0]: " << originalCat.getBrain()->getIdea(0) << std::endl;
-    std::cout << "Copied Cat idea[0]: " << copiedCat.getBrain()->getIdea(0) << std::endl;
+    delete dog1;
+    delete dog2;
+    delete cat1;
 
     return 0;
 }

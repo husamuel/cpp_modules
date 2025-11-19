@@ -27,16 +27,3 @@ Brain::~Brain()
 {
     std::cout << "Brain destroyed" << std::endl;
 }
-
-void Brain::set_idea(const std::string& str, int i)
-{
-    if (i >= 0 && i < 100)
-        ideas[i] = str;
-}
-
-std::string Brain::get_idea(int i) const
-{
-    if (i >= 0 && i < 100)
-        return ideas[i];
-    return "";
-}
