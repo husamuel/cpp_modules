@@ -18,7 +18,7 @@ FragTrap.o: FragTrap.cpp FragTrap.hpp ScavTrap.hpp ClapTrap.hpp
 	c++ -Wall -Wextra -Werror -std=c++98 -c FragTrap.cpp -o FragTrap.o
 
 clean:
-	rm -f main.o ClapTrap.o FragTrap.o
+	rm -f main.o ClapTrap.o FragTrap.o ScavTrap.o
 
 fclean: clean
 	rm -f $(NAME)
